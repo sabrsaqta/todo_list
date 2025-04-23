@@ -33,6 +33,9 @@ class Task(models.Model):
 
     # Кастомный менеджер
     objects = TaskManager()
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # связь с юзером
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.title

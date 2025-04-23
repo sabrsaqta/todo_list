@@ -1,23 +1,36 @@
 from rest_framework import serializers
-from .models import Task, Category, Tag
+from .models import Task, Category
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
-# === Ручной сериализатор (Serializer) ===
-class SimpleTaskSerializer(serializers.Serializer):
-    title = serializers.CharField(max_length=200)
-    is_completed = serializers.BooleanField()
+# ModelSerializer: Task
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = '__all__'
 
-# Еще один ручной — для тегов
-class TagSerializerManual(serializers.Serializer):
-    name = serializers.CharField()
-
-# === Модельные сериализаторы (ModelSerializer) ===
+# ModelSerializer: Category
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
 
-class TaskSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Task
-        fields = '__all__'
-        read_only_fields = ['user']
+# Serializer: Login
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField()
+
+# Serializer: Register
+class RegisterSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+
+    def create(self, validated_data):
+        user = User.objects.create_user(
+            username=validated_data['username'],
+            email=validated_data['email'],
+            password=validated_data['password']
+        )
+        Token.objects.create(user=user)
+        return user
