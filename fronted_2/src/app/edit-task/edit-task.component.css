@@ -1,0 +1,87 @@
+/* Контейнер: центрирует форму по экрану */
+.task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Карточка: аккуратная, с тенью */
+.task-card {
+    background-color: #fff;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Заголовок и подзаголовок внутри карточки */
+mat-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Общие стили для полей */
+.form-field {
+    width: 100%;
+}
+
+/* Подписи */
+mat-label {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Ввод: красиво и просто */
+input.mat-input-element,
+textarea.mat-input-element {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+input.mat-input-element:focus,
+textarea.mat-input-element:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 6px rgba(63, 81, 181, 0.25);
+    background-color: #fff;
+    outline: none;
+}
+
+/* Кнопка подтверждения */
+.confirm-button {
+    margin-top: 16px;
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.confirm-button:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+}
+
+textarea.mat-input-element {
+    resize: none;
+}

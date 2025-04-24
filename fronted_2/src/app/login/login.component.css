@@ -1,0 +1,98 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+}
+
+.login-title {
+    margin-bottom: 32px;
+    font-size: 2.2rem;
+    color: #3f51b5;
+    font-weight: 700;
+}
+
+mat-form-field {
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+mat-label {
+    font-size: 1rem;
+    color: #444;
+}
+
+input.mat-input-element {
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input.mat-input-element:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.4);
+    outline: none;
+}
+
+mat-error {
+    color: #f44336;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+button.login-button {
+    background-color: #3f51b5;
+    color: white;
+    padding: 14px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+button.login-button:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+}
+
+.forgot-password {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.forgot-password a {
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}

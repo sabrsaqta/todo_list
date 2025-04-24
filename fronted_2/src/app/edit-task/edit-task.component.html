@@ -1,0 +1,22 @@
+<div class="task-container">
+    <mat-card class="task-card">
+        <mat-card-header>
+            <mat-card-title>
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Title</mat-label>
+                    <input matInput [(ngModel)]="taskTitle" placeholder="Enter task title">
+                </mat-form-field>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Details</mat-label>
+                    <textarea matInput [(ngModel)]="taskDescription" placeholder="Enter task details"
+                        rows="4"></textarea>
+                </mat-form-field>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-button class="confirm-button" (click)="editTask()">CONFIRM EDIT</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

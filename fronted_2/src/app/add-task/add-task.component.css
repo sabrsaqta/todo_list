@@ -1,0 +1,82 @@
+/* Контейнер всей формы */
+.task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Карточка */
+.task-card {
+    background: #ffffff;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+/* Эффект при наведении */
+.task-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Заголовок */
+.task-title {
+    font-size: 1.6rem;
+    color: #3f51b5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Поля ввода */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Ввод и текстовая область */
+input.mat-input-element,
+textarea.mat-input-element {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Фокус */
+input.mat-input-element:focus,
+textarea.mat-input-element:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 6px rgba(63, 81, 181, 0.3);
+    outline: none;
+}
+
+/* Кнопка */
+.add-task-button {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-task-button:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+}
+
+/* Запрет изменения размера */
+textarea.mat-input-element {
+    resize: none;
+}
